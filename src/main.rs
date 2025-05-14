@@ -7,7 +7,7 @@ use std::sync::{Arc, atomic::{AtomicBool, Ordering}};
 fn main() {
     let (executor, spawner) = runtime::new_executor_and_spawner();
     
-    // this is used instead in order to terminate the `yield loop task` when the `timer task` finishes
+    // this flag is used in order to terminate the `yield loop task` when the `timer task` finishes
     let can_be_terminated = Arc::<AtomicBool>::default();
     let can_be_terminated_clone = Arc::clone(&can_be_terminated);
 
